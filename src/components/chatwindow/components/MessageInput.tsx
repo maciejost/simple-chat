@@ -16,7 +16,7 @@ export const MessageInput = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className=" flex items-center justify-end gap-24 text-lg mt-24 "
+      className=" flex items-center justify-end gap-24 text-lg p-24"
     >
       <input
         className="w-full px-16 transition-all py-8 rounded-sm focus:border-2  border-[1px]  border-gray-600 hover:border-2 focus:border-black "

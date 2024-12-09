@@ -1,11 +1,15 @@
-import { ChatBubble, MessageInput } from "./components";
+import { ChatBubble, Header, MessageInput } from "./components";
 
 export const ChatWindow = () => {
   const date = new Date();
 
   return (
-    <section className="p-24 justify-between flex flex-col h-screen border-l-1 border-gray-300">
-      <div className="flex  flex-col gap-16">
+    <section className=" justify-between flex flex-col h-screen border-l-1 border-gray-300">
+      <Header
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+      />
+      <div className="flex pt-24 flex-col gap-16 mb-auto px-24">
         <ChatBubble
           sentTime={new Date(date.setDate(date.getDate() - 3))}
           variant="RECEIVED"

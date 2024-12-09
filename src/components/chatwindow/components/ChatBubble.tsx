@@ -19,6 +19,8 @@ export const ChatBubble: React.FC<PropsWithChildren<ChatBubbleProps>> = ({
       onMouseLeave={() => setShowSentTime(false)}
       className={`flex gap-8 items-center ${variant === "SENT" ? "flex-row self-end" : "flex-row-reverse self-start"}`}
     >
+      {/* Adding and removing this element is more costly than simply toggling the `display` property in CSS.
+        Just didn't want to spend the time adding a component for it in tailwind 😅 */}
       {showSentTime && (
         <span className="text-sm text-gray-600">
           {sentTime.toLocaleDateString()} {sentTime.toLocaleTimeString()}
