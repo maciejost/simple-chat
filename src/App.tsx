@@ -1,8 +1,11 @@
+import { ChatList, ChatWindow } from "./components";
+
 function App() {
   return (
-    <>
-      <div className="mt-24">Viteapp</div>
-    </>
+    <main className="chat-grid">
+      <ChatList />
+      <ChatWindow />
+    </main>
   );
 }
 

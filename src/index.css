@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --spacing: 0,0625rem;
+  --spacing: 0.0625rem;
+}
+
+@utility chat-grid {
+    @media (width >= 48rem) {
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        height: 100vh;
+
+    }
 }
