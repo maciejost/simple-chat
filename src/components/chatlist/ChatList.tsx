@@ -2,7 +2,7 @@ import { FriendCard } from "./components";
 
 export const ChatList = () => {
   return (
-    <section className="">
+    <section className="overflow-auto">
       <FriendCard
         name="Maciej Ostrowski"
         image="https://thispersondoesnotexist.com/"

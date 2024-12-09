@@ -2,7 +2,7 @@ import { ChatList, ChatWindow } from "./components";
 
 function App() {
   return (
-    <main className="chat-grid">
+    <main className="chat-grid overflow-hidden">
       <ChatList />
       <ChatWindow />
     </main>

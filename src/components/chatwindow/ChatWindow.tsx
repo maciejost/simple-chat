@@ -4,12 +4,12 @@ export const ChatWindow = () => {
   const date = new Date();
 
   return (
-    <section className=" justify-between flex flex-col h-screen border-l-1 border-gray-300">
+    <section className=" justify-between flex flex-col h-screen border-l-1 border-gray-300 overflow-hidden">
       <Header
         name="Maciej Ostrowski"
         image="https://thispersondoesnotexist.com/"
       />
-      <div className="flex pt-24 flex-col gap-16 mb-auto px-24">
+      <div className="flex pt-24 flex-col gap-16 mb-auto px-24 overflow-auto">
         <ChatBubble
           sentTime={new Date(date.setDate(date.getDate() - 3))}
           variant="RECEIVED"

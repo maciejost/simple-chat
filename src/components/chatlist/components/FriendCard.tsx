@@ -12,7 +12,7 @@ export const FriendCard: React.FC<FriendCardProps> = ({
   isCurrentChat,
 }) => (
   <button
-    className={`p-16 block w-full cursor-pointer hover:bg-blue-50 border-b-1 border-gray-400 ${isCurrentChat ? "bg-blue-100" : "bg-gray-50"}`}
+    className={`p-16 block w-full text-left cursor-pointer hover:bg-blue-50 border-b-1 border-gray-400 ${isCurrentChat ? "bg-blue-100" : "bg-gray-50"}`}
   >
     <span className="flex  items-center gap-16">
       {image && (
