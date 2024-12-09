@@ -4,6 +4,10 @@
   --spacing: 0.0625rem;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 @utility chat-grid {
     @media (width >= 48rem) {
         display: grid;

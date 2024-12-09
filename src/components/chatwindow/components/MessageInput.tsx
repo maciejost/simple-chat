@@ -16,10 +16,10 @@ export const MessageInput = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="h-64 flex items-center justify-end gap-24 text-lg "
+      className=" flex items-center justify-end gap-24 text-lg mt-24 "
     >
       <input
-        className="w-3/4 px-16 py-8 rounded-sm focus:border-2  border-[1px]  border-gray-600 hover:border-2 focus:border-black "
+        className="w-full px-16 transition-all py-8 rounded-sm focus:border-2  border-[1px]  border-gray-600 hover:border-2 focus:border-black "
         name="message"
         type="text"
         value={message}
@@ -28,16 +28,15 @@ export const MessageInput = () => {
         }}
         placeholder="Aa"
       />
-      <span className="w-1/4">
-        {!!message.length && (
-          <button
-            className="rounded-4xl bg-gray-800 px-16 py-8 text-white cursor-pointer hover:scale-107 transition-all"
-            type="submit"
-          >
-            Send
-          </button>
-        )}
-      </span>
+
+      {!!message.length && (
+        <button
+          className="rounded-4xl bg-gray-800 px-20 py-10 text-white cursor-pointer hover:scale-107 transition-all"
+          type="submit"
+        >
+          Send
+        </button>
+      )}
     </form>
   );
 };
