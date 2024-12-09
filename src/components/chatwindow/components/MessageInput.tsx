@@ -1,16 +1,41 @@
 import { useState } from "react";
 
+import { participantsToChatID } from "../../utils/participantsToChatID";
+import { useChatContext } from "../../../App";
+
 export const MessageInput = () => {
   const [message, setMessage] = useState("");
+
+  const { currentChat, setChats, loggedInUser } = useChatContext();
+  const currentChatId = participantsToChatID(currentChat);
 
   const handleSubmit = (e: React.FormEvent) => {
     if (!message.length) return;
 
     e.preventDefault();
-    console.log({ message });
+
+    setChats((prevChats) => {
+      const chatIndex = prevChats.findIndex(
+        (chat) => chat.id === currentChatId,
+      );
+
+      if (chatIndex === -1) return prevChats;
+
+      const prevChat = prevChats[chatIndex];
+      prevChat.messages.push({
+        message,
+        sentBy: loggedInUser.id,
+        sentAt: new Date(),
+      });
+
+      return [
+        ...prevChats.slice(0, chatIndex),
+        prevChat,
+        ...prevChats.slice(chatIndex + 1),
+      ];
+    });
+
     setMessage("");
-    // TODO: load default messages into a state variable owned higher up in the component tree
-    // TODO: add the new message to the list of messages
   };
 
   return (

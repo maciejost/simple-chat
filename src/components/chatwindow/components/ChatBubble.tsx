@@ -1,15 +1,18 @@
-import { PropsWithChildren, useState } from "react";
+import { useState } from "react";
+import { Message } from "../../../data/model";
+import { useChatContext } from "../../../App";
 
 type ChatBubbleProps = {
-  variant: "SENT" | "RECEIVED";
-  sentTime: Date;
+  chatMessage: Message;
 };
 
-export const ChatBubble: React.FC<PropsWithChildren<ChatBubbleProps>> = ({
-  children,
-  variant,
-  sentTime,
-}) => {
+export const ChatBubble: React.FC<ChatBubbleProps> = ({ chatMessage }) => {
+  const { loggedInUser } = useChatContext();
+
+  const variant = loggedInUser.id === chatMessage.sentBy ? "SENT" : "RECEIVED";
+
+  const { sentAt, message } = chatMessage;
+
   const variantClasses = variant === "SENT" ? "bg-blue-400" : "bg-green-400 ";
   const [showSentTime, setShowSentTime] = useState(false);
 
@@ -23,12 +26,12 @@ export const ChatBubble: React.FC<PropsWithChildren<ChatBubbleProps>> = ({
         Just didn't want to spend the time adding a component for it in tailwind 😅 */}
       {showSentTime && (
         <span className="text-sm text-gray-600">
-          {sentTime.toLocaleDateString()} {sentTime.toLocaleTimeString()}
+          {sentAt.toLocaleDateString()} {sentAt.toLocaleTimeString()}
         </span>
       )}
 
       <div className={`px-20 py-14 w-fit ${variantClasses} rounded-4xl  `}>
-        {children}
+        {message}
       </div>
     </div>
   );

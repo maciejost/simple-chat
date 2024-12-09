@@ -8,6 +8,7 @@ type ChatContextType = {
   currentChat: [User["id"], User["id"]];
   setCurrentChat: Dispatch<React.SetStateAction<[User["id"], User["id"]]>>;
   chats: Chat[];
+  setChats: Dispatch<React.SetStateAction<Chat[]>>;
   users: User[];
   loggedInUser: User;
 };
@@ -30,13 +31,20 @@ function App() {
     loggedInUser.id,
   ] as [User["id"], User["id"]]);
 
-  const chats = useMemo(() => {
-    return usersWithoutLoggedIn.map((user) => chatFactory(user, loggedInUser));
-  }, [loggedInUser, usersWithoutLoggedIn]);
+  const [chats, setChats] = useState<Chat[]>(
+    usersWithoutLoggedIn.map((user) => chatFactory(user, loggedInUser)),
+  );
 
   return (
     <ChatContext.Provider
-      value={{ currentChat, setCurrentChat, chats, users, loggedInUser }}
+      value={{
+        currentChat,
+        setCurrentChat,
+        chats,
+        setChats,
+        users,
+        loggedInUser,
+      }}
     >
       <main className="chat-grid overflow-hidden">
         <ChatList />

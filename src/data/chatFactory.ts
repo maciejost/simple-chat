@@ -172,7 +172,7 @@ export const chatFactory = (sender: User, receiver: User): Chat => {
       sentAt: new Date(),
     },
     {
-      message: `Couldn’t agree more. Let’s make the most of it!`,
+      message: `Couldn’t agree more, ${sender.name}! Let’s make the most of it!`,
       sentBy: receiver.id,
       sentAt: new Date(),
     },
