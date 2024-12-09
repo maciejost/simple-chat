@@ -24,11 +24,10 @@ function App() {
   const usersWithoutLoggedIn = users.filter(
     (user) => user.id !== loggedInUser.id,
   );
-  console.log(loggedInUser, usersWithoutLoggedIn);
 
   const [currentChat, setCurrentChat] = useState([
-    loggedInUser.id,
     usersWithoutLoggedIn[0].id,
+    loggedInUser.id,
   ] as [User["id"], User["id"]]);
 
   const chats = useMemo(() => {
