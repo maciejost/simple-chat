@@ -10,9 +10,9 @@ export const MessageInput = () => {
   const currentChatId = participantsToChatID(currentChat);
 
   const handleSubmit = (e: React.FormEvent) => {
-    if (!message.length) return;
-
     e.preventDefault();
+
+    if (!message.length) return;
 
     setChats((prevChats) => {
       const chatIndex = prevChats.findIndex(
