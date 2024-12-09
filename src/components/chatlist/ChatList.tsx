@@ -3,8 +3,37 @@ import { FriendCard } from "./components";
 export const ChatList = () => {
   return (
     <section className="">
-      <h1 className="text-2xl font-bold">Chat list</h1>
-      <FriendCard />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+      />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+        isCurrentChat
+      />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+      />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+      />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+      />
+      <FriendCard
+        name="Maciej Ostrowski"
+        image="https://thispersondoesnotexist.com/"
+        lastMessage="Hello are we going bowling, or not?"
+      />
     </section>
   );
 };
