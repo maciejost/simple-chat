@@ -12,6 +12,6 @@ export type Message = {
 
 export type Chat = {
   id: string;
-  participants: User["id"][];
+  participants: [User["id"], User["id"]];
   messages: Message[];
 };

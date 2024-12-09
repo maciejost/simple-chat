@@ -1,39 +1,14 @@
+import { useChatContext } from "../../App";
 import { FriendCard } from "./components";
 
 export const ChatList = () => {
+  const { chats } = useChatContext();
+
   return (
     <section className="overflow-auto">
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-      />
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-        isCurrentChat
-      />
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-      />
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-      />
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-      />
-      <FriendCard
-        name="Maciej Ostrowski"
-        image="https://thispersondoesnotexist.com/"
-        lastMessage="Hello are we going bowling, or not?"
-      />
+      {chats.map((chat) => (
+        <FriendCard key={chat.id} chat={chat} />
+      ))}
     </section>
   );
 };
