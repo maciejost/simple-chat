@@ -1,4 +1,4 @@
-import { Dispatch, useMemo, useState } from "react";
+import { Dispatch, useState } from "react";
 import { ChatList, ChatWindow } from "./components";
 import { chatFactory, users } from "./data";
 import { createContext, useContext } from "react";

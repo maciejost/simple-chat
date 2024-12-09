@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useChatContext } from "../../App";
 import { participantsToChatID } from "../utils/participantsToChatID";
 import { ChatBubble, Header, MessageInput } from "./components";
