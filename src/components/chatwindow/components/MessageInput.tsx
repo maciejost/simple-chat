@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { participantsToChatID } from "../../utils/participantsToChatID";
-import { useChatContext } from "../../../App";
+import { participantsToChatID } from "@utils/participantsToChatID";
+import { useChatContext } from "src/App";
 
 export const MessageInput = () => {
   const [message, setMessage] = useState("");
@@ -21,6 +21,7 @@ export const MessageInput = () => {
 
       if (chatIndex === -1) return prevChats;
 
+      // The logic here is messy, should ideally be a way cleaner POST/emitting a socket event to the server.
       const prevChat = prevChats[chatIndex];
       prevChat.messages.push({
         message,

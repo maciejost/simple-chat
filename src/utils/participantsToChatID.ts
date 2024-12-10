@@ -1,7 +1,7 @@
-import { User } from "../../data/model";
+import { Chat } from "@data/model";
 
 export const participantsToChatID = (
-  participants: [User["id"], User["id"]],
+  participants: Chat["participants"],
 ): string => {
   return `chat-${participants[0]}-${participants[1]}`;
 };

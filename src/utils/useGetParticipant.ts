@@ -1,7 +1,7 @@
-import { useChatContext } from "../../App";
-import { User } from "../../data/model";
+import { Chat } from "@data/model";
+import { useChatContext } from "src/App";
 
-export const useGetParticipant = (participants: [User["id"], User["id"]]) => {
+export const useGetParticipant = (participants: Chat["participants"]) => {
   const { loggedInUser, users } = useChatContext();
 
   const sender = participants.find(

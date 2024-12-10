@@ -1,7 +1,7 @@
-import { useChatContext } from "../../../App";
-import { Chat } from "../../../data/model";
-import { participantsToChatID } from "../../utils/participantsToChatID";
-import { useGetParticipant } from "../../utils/useGetParticipant";
+import { Chat } from "@data/model";
+import { participantsToChatID } from "@utils/participantsToChatID";
+import { useGetParticipant } from "@utils/useGetParticipant";
+import { useChatContext } from "src/App";
 
 type FriendCardProps = {
   chat: Chat;
@@ -20,6 +20,7 @@ export const FriendCard: React.FC<FriendCardProps> = ({ chat }) => {
   const currentChatId = participantsToChatID(currentChat);
   const isCurrentChat = currentChatId === id;
 
+  // The API should return the messages-array already sorted, if it doesn't, getting the last message like this can be risky
   const lastMessage = messages[messages.length - 1].message;
 
   return (
@@ -27,6 +28,8 @@ export const FriendCard: React.FC<FriendCardProps> = ({ chat }) => {
       onClick={() => setCurrentChat(participants)}
       className={`p-16 block w-full text-left cursor-pointer hover:bg-blue-50 border-b-1 border-gray-400 ${isCurrentChat ? "bg-blue-100" : "bg-gray-50"}`}
     >
+      {/* The name/avatar-combo gets reused in the header, and could be used elsewhere in a larger app.
+        Could be refactored to its own component, with a couple of size/layout variants. */}
       <span className="flex  items-center gap-16">
         {avatar && (
           <img

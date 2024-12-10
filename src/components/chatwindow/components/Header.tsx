@@ -1,5 +1,5 @@
-import { useChatContext } from "../../../App";
-import { useGetParticipant } from "../../utils/useGetParticipant";
+import { useChatContext } from "src/App";
+import { useGetParticipant } from "@utils/useGetParticipant";
 
 export const Header: React.FC = () => {
   const { currentChat } = useChatContext();

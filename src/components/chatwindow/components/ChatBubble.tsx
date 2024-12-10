@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Message } from "../../../data/model";
-import { useChatContext } from "../../../App";
+import { Message } from "@data/model";
+import { useChatContext } from "src/App";
 
 type ChatBubbleProps = {
   chatMessage: Message;
